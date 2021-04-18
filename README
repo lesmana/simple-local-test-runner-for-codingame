@@ -1,0 +1,23 @@
+codingame local runner
+
+helper to run codingame code on local machine
+
+with test data in one file for easy editing
+
+run like this
+
+    ./codingamelocalrunner.sh <testdata
+
+parses test data file
+
+runs code with input from test data file
+
+compares output from code with output from test data file
+
+at the moment hardcoded for javascript
+
+only works for pratice puzzles that expects just one time input
+
+does not work for puzzles that expect input per turn
+
+most likely never will because turn based input must be calculated
