@@ -2,6 +2,12 @@
 
 state=header
 
+if [ -x code.sh ] ; then
+  command="./code.sh"
+else
+  command="echo lol where is code"
+fi
+
 header() {
   case "$1" in
     ====*) state=comment ;;
@@ -36,7 +42,7 @@ run() {
     cat comment
     echo -----------------------------------------------------
   fi
-  node code.js <input | tee actualoutput
+  $command <input | tee actualoutput
   echo ------------------------------------------------------
   diff output actualoutput
   if [ $? -eq 0 ] ; then

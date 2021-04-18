@@ -14,8 +14,6 @@ runs code with input from test data file
 
 compares output from code with output from test data file
 
-at the moment hardcoded for javascript
-
 only works for pratice puzzles that expects just one time input
 
 does not work for puzzles that expect input per turn
