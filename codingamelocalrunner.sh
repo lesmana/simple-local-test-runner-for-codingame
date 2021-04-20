@@ -2,11 +2,8 @@
 
 state=header
 
-if [ -x code.sh ] ; then
-  command="./code.sh"
-else
-  command="echo lol where is code"
-fi
+command="$@"
+command="${command:-echo lol where is code}"
 
 header() {
   case "$1" in
