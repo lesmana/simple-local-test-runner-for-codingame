@@ -62,4 +62,5 @@ while read line ; do
   $state "$line" || exit 1
 done
 
+echo =====================================================
 echo all pass
