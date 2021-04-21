@@ -22,10 +22,10 @@ readtosep "$testsep"
 while true ; do
   readtosep "$iosep" >comment
   test -s comment || break
-  readtosep "$iosep" >input
-  readtosep "$testsep" >output
   printf -- "$testsep\n"
   cat comment
+  readtosep "$iosep" >input
+  readtosep "$testsep" >output
   printf -- "$iosep\n"
   $command <input | tee actualoutput
   printf -- "$iosep\n"
