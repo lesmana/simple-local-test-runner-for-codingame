@@ -4,6 +4,11 @@ state=header
 
 command="${@:-echo lol where is code}"
 
+rm -f comment input output actualoutput
+
+read testsep
+read iosep
+
 header() {
   case "$1" in
     $testsep*) state=comment ;;
@@ -51,11 +56,6 @@ run() {
     return 1
   fi
 }
-
-rm -f comment input output actualoutput
-
-read testsep
-read iosep
 
 while read line ; do
   $state "$line" || exit 1
