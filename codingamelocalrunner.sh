@@ -15,6 +15,10 @@ header() {
   esac
 }
 
+while read line ; do
+  header "$line" || break
+done
+
 comment() {
   line="$1"
   case "$line" in
@@ -56,10 +60,6 @@ run() {
     return 1
   fi
 }
-
-while read line ; do
-  header "$line" || break
-done
 
 while true ; do
   while read line ; do
