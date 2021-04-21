@@ -32,8 +32,7 @@ while true ; do
   printf -- '%s\n' "$iosep"
   $command <input | tee actualoutput
   printf -- '%s\n' "$iosep"
-  diff output actualoutput
-  if [ $? -eq 0 ] ; then
+  if diff output actualoutput ; then
     echo pass
     rm -f input output actualoutput
   else
