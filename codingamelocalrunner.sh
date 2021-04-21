@@ -19,18 +19,13 @@ while read line ; do
   header "$line" || break
 done
 
-comment() {
-  line="$1"
-  case "$line" in
-    $iosep*) return 1 ;;
-    *) printf -- "$line\n" >>comment ;;
-  esac
-}
-
 while true ; do
   while read line ; do
-    comment "$line" || break
-  done
+    case "$line" in
+      $iosep*) break ;;
+      *) printf -- "$line\n" ;;
+    esac
+  done >comment
   test -s comment || break
   while read line ; do
     case "$line" in
