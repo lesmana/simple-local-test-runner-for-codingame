@@ -2,8 +2,7 @@
 
 state=header
 
-command="$@"
-command="${command:-echo lol where is code}"
+command="${@:-echo lol where is code}"
 
 header() {
   case "$1" in
