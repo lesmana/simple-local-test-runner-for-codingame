@@ -7,33 +7,23 @@ rm -f comment input output actualoutput
 read testsep
 read iosep
 
-while read line ; do
-  case "$line" in
-    $testsep*) break ;;
-    *) printf -- "$line\n" ;;
-  esac
-done
+function readtosep() {
+  sep="$1"
+  while read line ; do
+    case "$line" in
+      $sep*) break ;;
+      *) printf -- "$line\n" ;;
+    esac
+  done
+}
+
+readtosep "$testsep"
 
 while true ; do
-  while read line ; do
-    case "$line" in
-      $iosep*) break ;;
-      *) printf -- "$line\n" ;;
-    esac
-  done >comment
+  readtosep "$iosep" >comment
   test -s comment || break
-  while read line ; do
-    case "$line" in
-      $iosep*) break ;;
-      *) printf -- "$line\n" ;;
-    esac
-  done >input
-  while read line ; do
-    case "$line" in
-      $testsep*) break ;;
-      *) printf -- "$line\n" ;;
-    esac
-  done >output
+  readtosep "$iosep" >input
+  readtosep "$testsep" >output
   printf -- "$testsep\n"
   cat comment
   printf -- "$iosep\n"
