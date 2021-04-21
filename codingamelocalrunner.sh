@@ -20,10 +20,13 @@ function readtosep() {
 readtosep "$testsep"
 
 while true ; do
-  readtosep "$iosep" >comment
-  test -s comment || break
-  printf -- "$testsep\n"
-  cat comment
+  comment=$(readtosep "$iosep")
+  if [ -z "$comment" ] ; then
+    break
+  else
+    printf -- "$testsep\n"
+    printf -- "$comment\n"
+  fi
   readtosep "$iosep" >input
   readtosep "$testsep" >output
   printf -- "$iosep\n"
