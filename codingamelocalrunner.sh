@@ -2,7 +2,7 @@
 
 command="${@:-echo lol where is code}"
 
-rm -f comment input output actualoutput
+rm -f input output actualoutput
 
 read testsep
 read iosep
@@ -35,7 +35,7 @@ while true ; do
   diff output actualoutput
   if [ $? -eq 0 ] ; then
     echo pass
-    rm -f comment input output actualoutput
+    rm -f input output actualoutput
   else
     printf -- "$iosep\n"
     echo fail
