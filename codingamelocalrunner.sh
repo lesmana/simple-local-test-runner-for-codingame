@@ -1,7 +1,5 @@
 #!/bin/bash
 
-state=header
-
 command="${@:-echo lol where is code}"
 
 rm -f comment input output actualoutput
@@ -12,7 +10,7 @@ read iosep
 header() {
   line="$1"
   case "$line" in
-    $testsep*) state=comment ;;
+    $testsep*) return 1 ;;
     *) printf -- "$line\n" ;;
   esac
 }
@@ -20,7 +18,7 @@ header() {
 comment() {
   line="$1"
   case "$line" in
-    $iosep*) state=input ;;
+    $iosep*) return 1 ;;
     *) printf -- "$line\n" >>comment ;;
   esac
 }
@@ -28,7 +26,7 @@ comment() {
 input() {
   line="$1"
   case "$line" in
-    $iosep*) state=output ;;
+    $iosep*) return 1 ;;
     *) printf -- "$line\n" >>input ;;
   esac
 }
@@ -36,7 +34,7 @@ input() {
 output() {
   line="$1"
   case "$line" in
-    $testsep*) state=comment ; run ;;
+    $testsep*) return 1 ;;
     *) printf -- "$line\n" >>output ;;
   esac
 }
@@ -60,7 +58,21 @@ run() {
 }
 
 while read line ; do
-  $state "$line" || exit 1
+  header "$line" || break
+done
+
+while true ; do
+  while read line ; do
+    comment "$line" || break
+  done
+  test -s comment || break
+  while read line ; do
+    input "$line" || break
+  done
+  while read line ; do
+    output "$line" || break
+  done
+  run || exit 1
 done
 
 printf -- "$testsep\n"
