@@ -10,30 +10,34 @@ read testsep
 read iosep
 
 header() {
-  case "$1" in
+  line="$1"
+  case "$line" in
     $testsep*) state=comment ;;
-    *) printf -- "$1\n" ;;
+    *) printf -- "$line\n" ;;
   esac
 }
 
 comment() {
-  case "$1" in
+  line="$1"
+  case "$line" in
     $iosep*) state=input ;;
-    *) printf -- "$1\n" >>comment ;;
+    *) printf -- "$line\n" >>comment ;;
   esac
 }
 
 input() {
-  case "$1" in
+  line="$1"
+  case "$line" in
     $iosep*) state=output ;;
-    *) printf -- "$1\n" >>input ;;
+    *) printf -- "$line\n" >>input ;;
   esac
 }
 
 output() {
-  case "$1" in
+  line="$1"
+  case "$line" in
     $testsep*) state=comment ; run ;;
-    *) printf -- "$1\n" >>output ;;
+    *) printf -- "$line\n" >>output ;;
   esac
 }
 
