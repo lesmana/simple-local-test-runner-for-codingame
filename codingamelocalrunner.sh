@@ -43,10 +43,8 @@ output() {
 
 run() {
   printf -- "$testsep\n"
-  if [ -e comment ] ; then
-    cat comment
-    printf -- "$iosep\n"
-  fi
+  cat comment
+  printf -- "$iosep\n"
   $command <input | tee actualoutput
   printf -- "$iosep\n"
   diff output actualoutput
