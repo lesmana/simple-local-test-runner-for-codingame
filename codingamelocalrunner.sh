@@ -1,6 +1,10 @@
 #!/bin/bash
 
-command="${@:-echo lol where is code}"
+if [ $# -eq 0 ]; then
+  echo "need argument: command to run"
+  echo "also need testdata piped or redirected to stdin"
+  exit 1
+fi
 
 rm -f input output actualoutput
 
@@ -30,7 +34,7 @@ while true ; do
   readtosep "$iosep" >input
   readtosep "$testsep" >output
   printf -- '%s\n' "$iosep"
-  $command <input | tee actualoutput
+  "$@" <input | tee actualoutput
   printf -- '%s\n' "$iosep"
   if diff output actualoutput ; then
     echo pass
