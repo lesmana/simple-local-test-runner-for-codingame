@@ -7,16 +7,11 @@ rm -f comment input output actualoutput
 read testsep
 read iosep
 
-header() {
-  line="$1"
+while read line ; do
   case "$line" in
-    $testsep*) return 1 ;;
+    $testsep*) break ;;
     *) printf -- "$line\n" ;;
   esac
-}
-
-while read line ; do
-  header "$line" || break
 done
 
 while true ; do
