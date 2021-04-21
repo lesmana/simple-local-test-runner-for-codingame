@@ -27,22 +27,17 @@ comment() {
   esac
 }
 
-input() {
-  line="$1"
-  case "$line" in
-    $iosep*) return 1 ;;
-    *) printf -- "$line\n" >>input ;;
-  esac
-}
-
 while true ; do
   while read line ; do
     comment "$line" || break
   done
   test -s comment || break
   while read line ; do
-    input "$line" || break
-  done
+    case "$line" in
+      $iosep*) break ;;
+      *) printf -- "$line\n" ;;
+    esac
+  done >input
   while read line ; do
     case "$line" in
       $testsep*) break ;;
