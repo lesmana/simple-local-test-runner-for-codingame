@@ -43,24 +43,6 @@ output() {
   esac
 }
 
-run() {
-  printf -- "$testsep\n"
-  cat comment
-  printf -- "$iosep\n"
-  $command <input | tee actualoutput
-  printf -- "$iosep\n"
-  diff output actualoutput
-  if [ $? -eq 0 ] ; then
-    echo pass
-    rm -f comment input output actualoutput
-    return 0
-  else
-    printf -- "$iosep\n"
-    echo fail
-    return 1
-  fi
-}
-
 while true ; do
   while read line ; do
     comment "$line" || break
@@ -72,7 +54,20 @@ while true ; do
   while read line ; do
     output "$line" || break
   done
-  run || exit 1
+  printf -- "$testsep\n"
+  cat comment
+  printf -- "$iosep\n"
+  $command <input | tee actualoutput
+  printf -- "$iosep\n"
+  diff output actualoutput
+  if [ $? -eq 0 ] ; then
+    echo pass
+    rm -f comment input output actualoutput
+  else
+    printf -- "$iosep\n"
+    echo fail
+    exit 1
+  fi
 done
 
 printf -- "$testsep\n"
