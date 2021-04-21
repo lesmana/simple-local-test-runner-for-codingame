@@ -12,7 +12,7 @@ function readtosep() {
   while read line ; do
     case "$line" in
       $sep*) break ;;
-      *) printf -- "$line\n" ;;
+      *) printf -- '%s\n' "$line" ;;
     esac
   done
 }
@@ -24,24 +24,24 @@ while true ; do
   if [ -z "$comment" ] ; then
     break
   else
-    printf -- "$testsep\n"
-    printf -- "$comment\n"
+    printf -- '%s\n' "$testsep"
+    printf -- '%s\n' "$comment"
   fi
   readtosep "$iosep" >input
   readtosep "$testsep" >output
-  printf -- "$iosep\n"
+  printf -- '%s\n' "$iosep"
   $command <input | tee actualoutput
-  printf -- "$iosep\n"
+  printf -- '%s\n' "$iosep"
   diff output actualoutput
   if [ $? -eq 0 ] ; then
     echo pass
     rm -f input output actualoutput
   else
-    printf -- "$iosep\n"
+    printf -- '%s\n' "$iosep"
     echo fail
     exit 1
   fi
 done
 
-printf -- "$testsep\n"
+printf -- '%s\n' "$testsep"
 echo all pass
