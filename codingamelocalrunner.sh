@@ -35,14 +35,6 @@ input() {
   esac
 }
 
-output() {
-  line="$1"
-  case "$line" in
-    $testsep*) return 1 ;;
-    *) printf -- "$line\n" >>output ;;
-  esac
-}
-
 while true ; do
   while read line ; do
     comment "$line" || break
@@ -52,8 +44,11 @@ while true ; do
     input "$line" || break
   done
   while read line ; do
-    output "$line" || break
-  done
+    case "$line" in
+      $testsep*) break ;;
+      *) printf -- "$line\n" ;;
+    esac
+  done >output
   printf -- "$testsep\n"
   cat comment
   printf -- "$iosep\n"
