@@ -4,15 +4,15 @@ command="${@:-echo lol where is code}"
 
 rm -f input output actualoutput
 
-read testsep
-read iosep
+read -r testsep
+read -r iosep
 
 function readtosep() {
   sep="$1"
-  while read line ; do
-    case "$line" in
+  while IFS= read -r ; do
+    case "$REPLY" in
       $sep*) break ;;
-      *) printf -- '%s\n' "$line" ;;
+      *) printf -- '%s\n' "$REPLY" ;;
     esac
   done
 }
