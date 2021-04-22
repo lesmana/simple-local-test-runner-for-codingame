@@ -11,7 +11,7 @@ rm -f input output actualoutput
 read -r testsep
 read -r iosep
 
-function readtosep() {
+function readto() {
   sep="$1"
   while IFS= read -r ; do
     case "$REPLY" in
@@ -21,18 +21,18 @@ function readtosep() {
   done
 }
 
-readtosep "$testsep"
+readto "$testsep"
 
 while true ; do
-  comment=$(readtosep "$iosep")
+  comment=$(readto "$iosep")
   if [ -z "$comment" ] ; then
     break
   else
     printf -- '%s\n' "$testsep"
     printf -- '%s\n' "$comment"
   fi
-  readtosep "$iosep" >input
-  readtosep "$testsep" >output
+  readto "$iosep" >input
+  readto "$testsep" >output
   printf -- '%s\n' "$iosep"
   "$@" <input | tee actualoutput
   printf -- '%s\n' "$iosep"
