@@ -8,8 +8,8 @@ fi
 
 rm -f input output actualoutput
 
-read -r testsep
-read -r iosep
+read -r bigseparator
+read -r smallseparator
 
 function readto() {
   sep="$1"
@@ -21,30 +21,30 @@ function readto() {
   done
 }
 
-readto "$testsep"
+readto "$bigseparator"
 
 while true ; do
-  comment=$(readto "$iosep")
+  comment=$(readto "$smallseparator")
   if [ -z "$comment" ] ; then
     break
   else
-    printf -- '%s\n' "$testsep"
+    printf -- '%s\n' "$bigseparator"
     printf -- '%s\n' "$comment"
   fi
-  readto "$iosep" >input
-  readto "$testsep" >output
-  printf -- '%s\n' "$iosep"
+  readto "$smallseparator" >input
+  readto "$bigseparator" >output
+  printf -- '%s\n' "$smallseparator"
   "$@" <input | tee actualoutput
-  printf -- '%s\n' "$iosep"
+  printf -- '%s\n' "$smallseparator"
   if diff output actualoutput ; then
     echo pass
     rm -f input output actualoutput
   else
-    printf -- '%s\n' "$iosep"
+    printf -- '%s\n' "$smallseparator"
     echo fail
     exit 1
   fi
 done
 
-printf -- '%s\n' "$testsep"
+printf -- '%s\n' "$bigseparator"
 echo all pass
