@@ -6,7 +6,7 @@ with test data in one file for easy editing
 
 run like this
 
-    ./codingamelocalrunner.sh runyourcode <testdata
+    ./cgrunner.sh runyourcode <testdata
 
 this will run runyourcode with input taken from testdata
 
