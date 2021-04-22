@@ -37,11 +37,11 @@ while true ; do
   "$@" <input | tee actualoutput
   printf -- '%s\n' "$smallseparator"
   if diff output actualoutput ; then
-    echo pass
+    echo pass "$comment"
     rm -f input output actualoutput
   else
     printf -- '%s\n' "$smallseparator"
-    echo fail
+    echo fail "$comment"
     exit 1
   fi
 done
