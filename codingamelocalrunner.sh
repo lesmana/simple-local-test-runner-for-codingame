@@ -24,12 +24,12 @@ function readto() {
 readto "$bigseparator"
 
 while true ; do
-  comment=$(readto "$smallseparator")
-  if [ -z "$comment" ] ; then
+  title=$(readto "$smallseparator")
+  if [ -z "$title" ] ; then
     break
   else
     printf -- '%s\n' "$bigseparator"
-    printf -- '%s\n' "$comment"
+    printf -- '%s\n' "$title"
   fi
   readto "$smallseparator" >input
   readto "$bigseparator" >output
@@ -37,11 +37,11 @@ while true ; do
   "$@" <input | tee actualoutput
   printf -- '%s\n' "$smallseparator"
   if diff output actualoutput ; then
-    echo pass "$comment"
+    echo pass "$title"
     rm -f input output actualoutput
   else
     printf -- '%s\n' "$smallseparator"
-    echo fail "$comment"
+    echo fail "$title"
     exit 1
   fi
 done
