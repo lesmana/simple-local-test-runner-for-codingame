@@ -1,21 +1,63 @@
-codingame local runner
+codingame simple local test runner
+==================================
 
-helper to run codingame code on local machine
+a small tool to run tests for your codingame code on your local machine.
+advantage, beside being able to code locally, is that all your test cases can
+be in one big file for easy editing.
 
-with test data in one file for easy editing
+this tool only runs tests. it does not sync with codingame website.
+you will have to copy your code yourself.
 
-run like this
+this tool only works for pracice puzzles which take one time input.
+it does not work for puzzles that take input per turn.
+
+run like this:
 
     ./cgrunner.sh runyourcode <testdata
+
+with `runyourcode` being the command you would use to run your code.
+for example: `node code.js` or `./code.py` (when `code.py` executable).
+
+and `testdata` looking like this:
+
+    =====================
+    ----------------------
+    header
+    ==========================
+    test case 1
+    ---------------------------
+    input1
+    -----------------------------
+    lolput1
+    ==========================
+    test case 2
+    ---------------------------
+    input2
+    -----------------------------
+    lolput2
+    =========================
+
+the format is as follows:
+
+    bigseparator
+    smallseparator
+    optional comment lines
+    bigseparator
+    test case title
+    smallseparator
+    input lines
+    smallseparator
+    expected output lines
+    bigseparator
+    next test case title
+    ...
+
+`bigseparator` and `smallseparator` can be anything.
+the actual separators separating the test cases then need to be
+at least as long as the first two separators.
 
 this will run runyourcode with input taken from testdata
 
 testdata is parsed to split individual test cases
 
 compares output from your code with output taken from test data file
-
-only works for practice puzzles that expects input just once
-
-does not work for puzzles that expect input per turn
-
-most likely never will because turn based input must be calculated
