@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# simple local test runner for codingame code
+# Copyright Lesmana Zimmer lesmana@gmx.de
+# Licensed under WTFPL version 2
+# http://www.wtfpl.net/about/
+
 if [ $# -eq 0 ]; then
   echo "need argument: command to run"
   echo "also need testdata piped or redirected to stdin"

@@ -61,3 +61,12 @@ this will run runyourcode with input taken from testdata
 testdata is parsed to split individual test cases
 
 compares output from your code with output taken from test data file
+
+----
+Copyright Lesmana Zimmer lesmana@gmx.de
+
+This program is free software.
+It is licensed under the WTFPL version 2.
+That means that you can do what the fuck
+you want to with this program.
+For details see http://www.wtfpl.net/about/
