@@ -24,11 +24,22 @@ how to use
 with `runyourcode` being the command you would use to run your code.
 for example: `node code.js` or `./code.py` (if `code.py` executable).
 
-this will run runyourcode with input taken from testdata
+how this works
+--------------
 
-testdata is parsed to split individual test cases
+using sophisticated algorithms and state of the art technology(*)
+the code autonomously learns what separator
+you are using for the test data file.
+it then proceeds to extract the individual test cases.
 
-compares output from your code with output taken from test data file
+for each test case your code is called
+with input from test data in stdin
+and output captured.
+the actual output is then compared to the expected output.
+
+if diff then fail and abort. if same then continue with next test case.
+
+(*) no blockchain, sorry.
 
 ----
 Copyright Lesmana Zimmer lesmana@gmx.de
