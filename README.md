@@ -24,44 +24,6 @@ how to use
 with `runyourcode` being the command you would use to run your code.
 for example: `node code.js` or `./code.py` (if `code.py` executable).
 
-and `testdata` looking like this:
-
-    =====================
-    ----------------------
-    header
-    ==========================
-    test case 1
-    ---------------------------
-    input1
-    -----------------------------
-    lolput1
-    ==========================
-    test case 2
-    ---------------------------
-    input2
-    -----------------------------
-    lolput2
-    =========================
-
-the format is as follows:
-
-    bigseparator
-    smallseparator
-    optional comment lines
-    bigseparator
-    test case title
-    smallseparator
-    input lines
-    smallseparator
-    expected output lines
-    bigseparator
-    next test case title
-    ...
-
-`bigseparator` and `smallseparator` can be anything.
-the actual separators separating the test cases then need to be
-at least as long as the first two separators.
-
 this will run runyourcode with input taken from testdata
 
 testdata is parsed to split individual test cases

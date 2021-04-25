@@ -1,0 +1,44 @@
+bigseparator
+smallseparator
+
+optional comment lines
+here you can write whatever
+it will be ignored up to next bigseparator
+the separators can be any characters
+the first two separator lines at start of file are to learn
+what the separators are
+the following actual separators must match the first two
+but can have any suffix
+that means they can be longer but not shorter
+
+bigseparator
+mandatory test case title
+smallseparator
+
+these lines
+will become stdin
+of your code
+
+smallseparator
+
+these lines
+will become the expected output
+note that the empty lines count towards the result
+all lines between the separators count
+
+bigseparator
+next test case title
+smallseparator
+input
+smallseparator
+output
+bigseparator
+next next test case title
+smallseparator
+input
+btw this is a legitimate testfile
+try it with ./cgrunner.sh cat expectedoutput <testfileformat.txt
+smallseparator
+output
+last big separator is optional
+bigseparator
