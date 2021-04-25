@@ -1,5 +1,5 @@
-codingame simple local test runner
-==================================
+simple local test runner for codingame code
+===========================================
 
 a small tool to run tests for your codingame code on your local machine.
 main advantage of this tool is that all your test cases
