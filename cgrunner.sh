@@ -11,7 +11,7 @@ if [ $# -eq 0 ]; then
   exit 1
 fi
 
-rm -f input output actualoutput
+rm -f input expectedoutput actualoutput
 
 read -r bigseparator
 read -r smallseparator
@@ -37,13 +37,13 @@ while true ; do
     printf -- '%s\n' "$title"
   fi
   readto "$smallseparator" >input
-  readto "$bigseparator" >output
+  readto "$bigseparator" >expectedoutput
   printf -- '%s\n' "$smallseparator"
   "$@" <input | tee actualoutput
   printf -- '%s\n' "$smallseparator"
-  if diff output actualoutput ; then
+  if diff expectedoutput actualoutput ; then
     echo pass "$title"
-    rm -f input output actualoutput
+    rm -f input expectedoutput actualoutput
   else
     printf -- '%s\n' "$smallseparator"
     echo fail "$title"
