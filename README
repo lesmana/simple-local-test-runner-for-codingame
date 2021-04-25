@@ -2,14 +2,14 @@ codingame simple local test runner
 ==================================
 
 a small tool to run tests for your codingame code on your local machine.
-advantage, beside being able to code locally, is that all your test cases can
-be in one big file for easy editing.
+main advantage of this tool is that all your test cases
+are in one big file for easy editing.
 
 this tool only runs tests. it does not sync with codingame website.
 you will have to copy your code yourself.
 
-this tool only works for pracice puzzles which take one time input.
-it does not work for puzzles that take input per turn.
+this tool only works for practice puzzles which read input once.
+it does not work for puzzles that must read input per turn.
 
 run like this:
 
