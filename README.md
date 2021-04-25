@@ -11,12 +11,18 @@ you will have to copy your code yourself.
 this tool only works for practice puzzles which read input once.
 it does not work for puzzles that must read input per turn.
 
-run like this:
+how to use
+----------
 
-    ./cgrunner.sh runyourcode <testdata
+1.  copy your code from codingame to a local file.
+2.  copy the test cases from codingame or write your own test cases.
+    see the example files for the format.
+3.  run like this:
+
+        ./cgrunner.sh runyourcode <testdata
 
 with `runyourcode` being the command you would use to run your code.
-for example: `node code.js` or `./code.py` (when `code.py` executable).
+for example: `node code.js` or `./code.py` (if `code.py` executable).
 
 and `testdata` looking like this:
 
