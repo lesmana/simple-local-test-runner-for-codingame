@@ -47,4 +47,4 @@ next test case title
 input
 --- smallseparator ---------------
 expected output
-=== bigseparator === last big separator is optional
+=== bigseparator ======= last big separator is optional
