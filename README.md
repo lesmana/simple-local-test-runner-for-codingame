@@ -27,6 +27,50 @@ how to use
 with `runyourcode` being the command you would use to run your code.
 for example: `node code.js` or `./code.py` (if `code.py` executable).
 
+demonstration
+-------------
+
+using the example code and example tests
+
+    $ ./cgrunner.sh node examplecode.js < exampletests
+    example test cases
+    for code that replaces "in" with "lol"
+    =====================
+    test case 1
+    ----------------------
+    got input1
+    lolput1
+    ----------------------
+    PASS: test case 1
+    =====================
+    test case 2
+    ----------------------
+    got input2
+    lolput2
+    ----------------------
+    PASS: test case 2
+    =====================
+    all pass
+
+and again for a fail
+
+    $ ./cgrunner.sh ./examplecode.py < exampletestsfail
+    example test cases with a deliberate fail
+    to demonstrate fail handling
+    also demonstrate that bigseparator and smallseparator
+    can be any string
+    ##################
+    this test case should fail
+    ~~~~~~~~~~~~~~~~~~
+    lolput1
+    ~~~~~~~~~~~~~~~~~~
+    1c1
+    < failput1
+    ---
+    > lolput1
+    ~~~~~~~~~~~~~~~~~~
+    FAIL: this test case should fail
+
 how this works
 --------------
 
