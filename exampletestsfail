@@ -1,9 +1,11 @@
 ##################
 ~~~~~~~~~~~~~~~~~~
-example with deliberate fail
+example test cases with a deliberate fail
 to demonstrate fail handling
+also demonstrate that bigseparator and smallseparator
+can be any string
 ##############################
-test case fail demo
+this test case should fail
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 input1
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
