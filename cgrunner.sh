@@ -32,7 +32,7 @@ function readto() {
   sep="$1"
   while IFS= read -r ; do
     case "$REPLY" in
-      $sep*) break ;;
+      "$sep"*) break ;;
       *) printf -- '%s\n' "$REPLY" ;;
     esac
   done
