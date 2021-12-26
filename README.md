@@ -9,7 +9,7 @@ codingame is a website where you can solve puzzles by writing code:
 https://www.codingame.com
 
 this tool only runs tests. it does not sync with codingame website.
-you will have to copy your code yourself.
+you will have to copy your code and test cases yourself.
 
 this tool only works for practice puzzles which read input once.
 it does not work for puzzles that must read input per turn.
@@ -30,19 +30,18 @@ for example: `node code.js` or `./code.py` (if `code.py` executable).
 how this works
 --------------
 
-using sophisticated algorithms and state of the art technology(*)
-the code autonomously learns what separator
-you are using for the test data file.
-it then proceeds to extract the individual test cases.
+the tool extracts the individual test cases one by one.
+for each test case
+the input part is saved to a file named input.
+the expected output part is saved to a file named expectedoutput.
 
-for each test case your code is called
-with input from test data in stdin
-and output captured.
+then your code is called
+with input piped in stdin
+and output (stdout) redirected to a file named actualoutput.
+(stderr is ignored).
 the actual output is then compared to the expected output.
 
 if diff then fail and abort. if same then continue with next test case.
-
-(*) no blockchain, sorry.
 
 ----
 Copyright Lesmana Zimmer lesmana@gmx.de
