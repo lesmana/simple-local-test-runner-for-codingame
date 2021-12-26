@@ -1,5 +1,5 @@
-=== bigseparator
---- smallseparator
+=== bigseparator =======
+--- smallseparator -----
 
 the first two lines are for the tool
 to learn what is bigseparator and smallseparator.
@@ -22,15 +22,15 @@ btw this is a legitimate testfile
 try it with
 ./cgrunner.sh cat expectedoutput <testfileformat.txt
 
-=== bigseparator can have any text appended
+=== bigseparator ===================
 mandatory test case title
---- smallseparator bla bla bla
+--- smallseparator ------------------
 
 these lines
 will become input
 for your code
 
---- smallseparator
+--- smallseparator -----------------
 
 these lines
 will become the expected output
@@ -38,10 +38,10 @@ will become the expected output
 note that the empty lines count towards the result
 all lines between the separators count
 
-=== bigseparator
+=== bigseparator =================
 next test case title
---- smallseparator
+--- smallseparator ----------------
 input
---- smallseparator
+--- smallseparator ---------------
 expected output
-=== bigseparator last big separator is optional
+=== bigseparator === last big separator is optional
