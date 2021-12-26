@@ -1,5 +1,11 @@
 
-// readline emulation
+// the following lines are for readline emulation
+// because codingame javascript environment
+// has a readline function defined
+// which needs to be emulated
+// for your local javascript environment
+// just slap the following lines
+// at the beginning of your javascript code
 
 const fs = require('fs');
 function* __readline() {
