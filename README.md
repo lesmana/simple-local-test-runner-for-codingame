@@ -43,6 +43,10 @@ the actual output is then compared to the expected output.
 
 if diff then fail and abort. if same then continue with next test case.
 
+afterwards the following files from the last run test are left over:
+input, expectedoutput, actualoutput.
+the files are overwritten on the next run.
+
 ----
 Copyright Lesmana Zimmer lesmana@gmx.de
 
