@@ -54,11 +54,11 @@ while true ; do
   "$@" <input | tee actualoutput
   printf -- '%s\n' "$smallseparator"
   if diff expectedoutput actualoutput ; then
-    echo pass "$title"
+    echo "PASS: $title"
     rm -f input expectedoutput actualoutput
   else
     printf -- '%s\n' "$smallseparator"
-    echo fail "$title"
+    echo "FAIL: $title"
     exit 1
   fi
 done
