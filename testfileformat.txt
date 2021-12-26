@@ -1,44 +1,47 @@
-bigseparator
-smallseparator
+=== bigseparator
+--- smallseparator
 
-optional comment lines
-here you can write whatever
-it will be ignored up to next bigseparator
-the separators can be any characters
-the first two separator lines at start of file are to learn
-what the separators are
-the following actual separators must match the first two
-but can have any suffix
-that means they can be longer but not shorter
+the first two lines are for the tool
+to learn what is bigseparator and smallseparator.
 
-bigseparator
+all the following lines will be ignored
+up to the next bigseparator.
+that means you can write whatever here.
+maybe comments for the test cases.
+or leave it empty.
+
+the separators can be any string.
+big and small separator should be different.
+
+the actual separators used below
+can have any text appended at the end.
+but the start must be identical
+to the separators defined above.
+
+btw this is a legitimate testfile
+try it with
+./cgrunner.sh cat expectedoutput <testfileformat.txt
+
+=== bigseparator can have any text appended
 mandatory test case title
-smallseparator
+--- smallseparator bla bla bla
 
 these lines
-will become stdin
-of your code
+will become input
+for your code
 
-smallseparator
+--- smallseparator
 
 these lines
 will become the expected output
+
 note that the empty lines count towards the result
 all lines between the separators count
 
-bigseparator
+=== bigseparator
 next test case title
-smallseparator
+--- smallseparator
 input
-smallseparator
-output
-bigseparator
-next next test case title
-smallseparator
-input
-btw this is a legitimate testfile
-try it with ./cgrunner.sh cat expectedoutput <testfileformat.txt
-smallseparator
-output
-last big separator is optional
-bigseparator
+--- smallseparator
+expected output
+=== bigseparator last big separator is optional
