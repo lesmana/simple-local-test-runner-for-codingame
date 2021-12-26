@@ -5,6 +5,9 @@ a small tool to run tests for your codingame code on your local machine.
 main advantage of this tool is that all your test cases
 are in one big file for easy editing.
 
+codingame is a website where you can solve puzzles by writing code:
+https://www.codingame.com
+
 this tool only runs tests. it does not sync with codingame website.
 you will have to copy your code yourself.
 
