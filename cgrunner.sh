@@ -11,6 +11,13 @@ if [ $# -eq 0 ]; then
   exit 1
 fi
 
+if [ "x$1" == "x-h" -o "x$1" == "x--help" ]; then
+  echo "simple local test runner for codingame code"
+  echo "need argument: command to run"
+  echo "also need testdata piped or redirected to stdin"
+  exit 1
+fi
+
 if [ -t 0 ]; then
   echo "need testdata piped or redirected on stdin"
   exit 1
