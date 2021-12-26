@@ -42,6 +42,7 @@ readto "$bigseparator"
 
 while true ; do
   title=$(readto "$smallseparator")
+  printf -v title -- '%s' "${title%%$'\n'*}"
   if [ -z "$title" ] ; then
     break
   else

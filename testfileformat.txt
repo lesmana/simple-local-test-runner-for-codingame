@@ -29,6 +29,8 @@ so we can just print that for perfect results.
 
 === bigseparator ===================
 mandatory test case title
+here can be more lines
+only the first line is taken
 --- smallseparator ------------------
 
 these lines
