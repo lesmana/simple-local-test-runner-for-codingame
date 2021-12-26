@@ -11,6 +11,11 @@ if [ $# -eq 0 ]; then
   exit 1
 fi
 
+if [ -t 0 ]; then
+  echo "need testdata piped or redirected on stdin"
+  exit 1
+fi
+
 rm -f input expectedoutput actualoutput
 
 read -r bigseparator
