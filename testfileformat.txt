@@ -20,7 +20,10 @@ to the separators defined above.
 
 btw this is a legitimate testfile
 try it with
-./cgrunner.sh cat expectedoutput <testfileformat.txt
+
+    ./cgrunner.sh cat expectedoutput <testfileformat.txt
+
+or maybe not the output is confusing lol
 
 === bigseparator ===================
 mandatory test case title
