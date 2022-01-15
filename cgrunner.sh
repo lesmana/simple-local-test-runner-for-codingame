@@ -38,7 +38,7 @@ function readto() {
   done
 }
 
-readto "$bigseparator"
+readto "$bigseparator" >/dev/null
 
 while true ; do
   title=$(readto "$smallseparator")
