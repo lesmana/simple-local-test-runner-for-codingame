@@ -23,8 +23,7 @@ try it with
 
     ./cgrunner.sh cat expectedoutput <testfileformat.txt
 
-note that this is cheating.
-because we are abusing the fact that the expected output exists as a file.
+note we are abusing the fact that the expected output exists as a file.
 so we can just print that for perfect results.
 
 === bigseparator ===================
