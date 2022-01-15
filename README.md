@@ -33,8 +33,6 @@ demonstration
 using the example code and example tests
 
     $ ./cgrunner.sh node examplecode.js < exampletests
-    example test cases
-    for code that replaces "in" with "lol"
     =====================
     test case 1
     ----------------------
@@ -55,10 +53,6 @@ using the example code and example tests
 and again for a fail
 
     $ ./cgrunner.sh ./examplecode.py < exampletestsfail
-    example test cases with a deliberate fail
-    to demonstrate fail handling
-    also demonstrate that bigseparator and smallseparator
-    can be any string
     ##################
     this test case should fail
     ~~~~~~~~~~~~~~~~~~
