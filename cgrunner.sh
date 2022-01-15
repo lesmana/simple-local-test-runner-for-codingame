@@ -41,8 +41,7 @@ function readto() {
 readto "$bigseparator" >/dev/null
 
 while true ; do
-  title=$(readto "$smallseparator")
-  printf -v title -- '%s' "${title%%$'\n'*}"
+  title=$(readto "$smallseparator" | head -n 1)
   if [ -z "$title" ] ; then
     break
   else
