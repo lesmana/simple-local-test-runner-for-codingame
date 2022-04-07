@@ -73,17 +73,18 @@ for each test case
 the input part is saved to a file named input.
 the expected output part is saved to a file named expectedoutput.
 
-then your code is called
-with input piped in stdin
-and output (stdout) redirected to a file named actualoutput.
-(stderr is ignored).
-the actual output is then compared to the expected output.
+then your code is called with input piped in stdin.
+stdout redirected to a file named actualoutput.
+stderr printed to screen.
+this mimics the behaviour of codingame online code runner.
 
-if diff then fail and abort. if same then continue with next test case.
+then actualoutput is compared to expectedoutput.
+if both are same then continue with next test case.
+if there is difference then report fail and abort the test run.
 
-afterwards the following files from the last run test are left over:
+after the test run the following files are left over:
 input, expectedoutput, actualoutput.
-the files are overwritten on the next run.
+the files will be overwritten on the next run.
 
 ----
 Copyright Lesmana Zimmer lesmana@gmx.de
