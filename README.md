@@ -86,7 +86,9 @@ after the test run the following files are left over:
 input, expectedoutput, actualoutput.
 the files will be overwritten on the next run.
 
-----
+License
+-------
+
 Copyright Lesmana Zimmer lesmana@gmx.de
 
 This program is free software.
