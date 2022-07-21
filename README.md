@@ -77,6 +77,9 @@ in this case actual output does not match expected output
 so a diff is printed and `FAIL` is printed.
 then the run is aborted. any following test cases are not run.
 
+note that the delimiters are different.
+the delimiters are taken from the test case file.
+
 how this works
 --------------
 
