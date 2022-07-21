@@ -62,6 +62,7 @@ and again for a fail
     ##################
     test case 1
     ~~~~~~~~~~~~~~~~~~
+    got input1
     lolput1
     ~~~~~~~~~~~~~~~~~~
     1c1
