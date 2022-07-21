@@ -73,7 +73,7 @@ and again for a fail
 
 as above title and output of code is printed.
 in this case actual output does not match expected output
-so a diff is printed and FAIL is printed.
+so a diff is printed and `FAIL` is printed.
 then the run is aborted. any following test cases are not run.
 
 how this works
