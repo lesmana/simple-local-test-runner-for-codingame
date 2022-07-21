@@ -50,6 +50,12 @@ using the example code and example tests
     =====================
     all pass
 
+how to read: first title is printed.
+then output of your code is printed.
+then, if actual output matches expected output,
+`PASS` with title is printed.
+last, if all test pass, `all pass` is printed.
+
 and again for a fail
 
     $ ./cgrunner.sh ./examplecode.py < exampletestsfail
@@ -64,6 +70,11 @@ and again for a fail
     > lolput1
     ~~~~~~~~~~~~~~~~~~
     FAIL: test case 1
+
+as above title and output of code is printed.
+in this case actual output does not match expected output
+so a diff is printed and FAIL is printed.
+then the run is aborted. any following test cases are not run.
 
 how this works
 --------------
