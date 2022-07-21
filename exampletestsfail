@@ -2,6 +2,7 @@
 ~~~~~~~~~~~~~~~~~~
 example test cases with a deliberate fail
 to demonstrate fail handling
+for code that replaces "in" with "lol"
 also demonstrate that bigseparator and smallseparator
 can be any string
 ##############################
