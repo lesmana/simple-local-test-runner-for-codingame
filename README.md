@@ -80,6 +80,15 @@ then the run is aborted. any following test cases are not run.
 note that the delimiters are different.
 the delimiters are taken from the test case file.
 
+super short explanation of the diff output:
+lines starting with `<` is the expected output.
+lines starting with `>` is the actual output.
+
+the diff output is not very human friendly.
+the files expectedoutput and actualoutput
+are left on disc after a FAIL
+so you can examine the diff using any tool you like.
+
 how this works
 --------------
 
