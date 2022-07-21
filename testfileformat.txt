@@ -23,13 +23,17 @@ try it with
 
     ./cgrunner.sh cat expectedoutput <testfileformat.txt
 
-note we are abusing the fact that the expected output exists as a file.
+the command (cat expectedoutput) works because
+the expected output exists as a file
+for the duration of the test
 so we can just print that for perfect results.
 
 === bigseparator ===================
 mandatory test case title
+
 here can be more lines
 only the first line is taken
+
 --- smallseparator ------------------
 
 these lines
