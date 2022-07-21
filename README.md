@@ -54,7 +54,7 @@ and again for a fail
 
     $ ./cgrunner.sh ./examplecode.py < exampletestsfail
     ##################
-    this test case should fail
+    test case 1
     ~~~~~~~~~~~~~~~~~~
     lolput1
     ~~~~~~~~~~~~~~~~~~
@@ -63,7 +63,7 @@ and again for a fail
     ---
     > lolput1
     ~~~~~~~~~~~~~~~~~~
-    FAIL: this test case should fail
+    FAIL: test case 1
 
 how this works
 --------------
