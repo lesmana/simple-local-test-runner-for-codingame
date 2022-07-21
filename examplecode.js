@@ -21,4 +21,5 @@ function readline() {
 
 let input = readline();
 console.error('got', input);
-console.log(input.replace('in', 'lol'));
+let output = input.replace('in', 'lol');
+console.log(output);
